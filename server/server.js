@@ -16,11 +16,8 @@ app.get('/', (req, res) => {
   res.status(200).json('Basketball api updates');
 });
 
-const SeasonRouter = require('./routers/seasonRouter');
-app.use('/api/v1', SeasonRouter);
-
-const PlayerRouter = require('./routers/playerRouter');
-app.use('/api/v1', PlayerRouter);
+const Routers = require('./routers');
+app.use('/api/v1', Routers);
 
 app.listen(process.env.PORT, () =>
   console.log(`Listen the port ${process.env.PORT}`)
